@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<form action="/personal_submit_complete">
+	<h1>설문지</h1>
+	<ol>
+		<li>강의 내용 이해 정도</li>
+			<input type="radio" name="understand"> 1<br>
+			<input type="radio" name="understand"> 2<br>
+			<input type="radio" name="understand"> 3<br>
+			<input type="radio" name="understand"> 4<br>
+			<input type="radio" name="understand"> 5<br><br>
+
+		<li>강의 내용이 도움이 되었는지</li>
+			<input type="radio" name="understand"> 1<br>
+			<input type="radio" name="understand"> 2<br>
+			<input type="radio" name="understand"> 3<br>
+			<input type="radio" name="understand"> 4<br>
+			<input type="radio" name="understand"> 5<br><br>
+
+		<li>개선 방안 혹은 건의 사항</li><br>
+			<textarea name="message" rows="5" cols="60"></textarea>
+		<br><br>
+		<input type="submit" value="Submit">
+	</ol>
+	</form>
+
+</body>
+</html>
