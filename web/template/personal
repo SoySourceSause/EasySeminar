@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<form action="/personal_submit_complete">
+	<h1>인적사항</h1>
+	<ol>
+		<li>이름</li>
+			<input type="text" name="name" size="10"><br><br>
+		<li>학교</li>
+			<input type="text" name="school" size="20"><br><br>
+		<li>학과</li>
+			<input type="text" name="department" size="20"><br><br>
+		<li>학번</li>
+			<input type="text" name="ID" size="20"><br><br>
+		<li>전화번호</li>
+			<p>
+				<input type="text" name="tel" size="5">-
+				<input type="text" name="tel" size="5">-
+				<input type="text" name="tel" size="5">
+			</p>
+			<br>
+		<input type="submit" value="Submit">
+	</ol>
+	</form>
+
+</body>
+</html>
