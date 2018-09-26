@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+  <head>
+  <meta charset="UTF-8">
+  <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+  </head>
+  <h1>Firebase</h1>
+  <p>데이터 추가 확인하기</p>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDNDOB8eIWBpTMTC-6___j7whWTHNtW0rU",
+    authDomain: "easyseminar5000.firebaseapp.com",
+    databaseURL: "https://easyseminar5000.firebaseio.com",
+    projectId: "easyseminar5000",
+    storageBucket: "easyseminar5000.appspot.com",
+    messagingSenderId: "580693786324"
+  };
+  firebase.initializeApp(config);
+   
+  var PostKey = firebase.database().ref().child('posts').push().key;
+ 
+  var postData = {
+    no: PostKey,
+    writer: "김혜윤",
+    title: "firebase",
+    memo: "memo",
+    date: Date.now()
+  };
+ 
+  var updates = {};
+  updates['/board/' + PostKey] = postData;
+ 
+  firebase.database().ref().update(updates);
+           
+</script>
+
+
