@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>firebase file storage</title>
+  <style media="screen">
+    body {
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    #uploader {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 50%;
+      margin-bottom: 10px;
+
+    }
+  </style>
+  <!--show the progress as a bar-->
+  <progress value="0" max="100" id="uploader">0%</progress>
+  <input type="file" value="upload" id="fileButton" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <!-- for hybrid App -->  
+  <link rel="stylesheet" href="jquery.mobile/query.mobile-1.4.5.min.css">
+  <script src="jquery.mobile/jquery-3.3.1.min.js"></script>
+  <script src="jquery.moblile/jquery.mobile-1.4.5.min.js"></script>
+
+
+  <script src="cordova.js"></script>
+  
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    //TODO: Fill the " " with your own one
+    var config = {
+      apiKey: " ",
+      authDomain: " ",
+      databaseURL: " ",
+      projectId: " ",
+      storageBucket: " ",
+      messagingSenderId: " "
+    };
+    firebase.initializeApp(config);
+    // Get elements
+    var uploader = document.getElementById('uploader');
+    var fileButton = document.getElementById('fileButton');
+
+    // Listen for file selection
+
+    fileButton.addEventListener('change', function(e) {
+      //Get file
+      var file = e.target.files[0];
+
+      //Create a storage ref
+      var storageRef = firebase.storage().ref('Seminar_library/' + file.name);
+      // Upload file
+      var task = storageRef.put(file);
+
+      //Update progress bar
+      task.on('state_changed', 
+        function progress(snapshot){
+          var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          uploader.value = percentage;
+        },
+
+        function error(err) {
+
+        },
+
+        function complete(){
+          
+        }
+      );
+        
+
+    });
+  </script>
+
+</head>
+
+<body>
+
+
+
+
+</body>
+</html>
