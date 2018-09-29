@@ -6,7 +6,10 @@ personal	-	name1	-	school: sschool
 						-	contact: 010-9999-8888
 						-	email: gggg@gmail.com
 						
-			-	name2	-...
+		-	name2	-...
+		
+		
+		
 			
 			
 survey		-	help		-	1: 30		//(points about 'help'): (how many people voted for the points) 
@@ -44,9 +47,17 @@ survey		-	help		-	1: 30		//(points about 'help'): (how many people voted for the
 											...
 											
 											
+											
+											
+											
+											
 question	-	name1		-	content	-	blarblar
 			-	name2		-	content	-	blarblar2
 			...
+			
+			
+			
+			
 			
 			
 quiz		-	quest		-	1		-	blarblar
