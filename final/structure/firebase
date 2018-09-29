@@ -1,72 +1,74 @@
 //The structure of data stored firebase
 
-personal	-	name1	-	school: sschool
+personal	-	name1			-	school: sschool
 						-	department: physics
 						-	age: 21
 						-	contact: 010-9999-8888
 						-	email: gggg@gmail.com
 						
-		-	name2	-...
+		-	name2			-...
 		
 		
 		
 			
 			
-survey		-	help		-	1: 30		//(points about 'help'): (how many people voted for the points) 
-							-	2: 31
-							-	3: 49
-							-	4: 41
-							-	5: 30
+survey		-	help			-	1: 30		//(points about 'help'): (how many people voted for the points) 
+						-	2: 31
+						-	3: 49
+						-	4: 41
+						-	5: 30
+
+		-	understand		-	1: 30
+						-	2: 31
+						-	3: 49
+						-	4: 41
+						-	5: 30
+					
+		-	lecturer		-	1: 30
+						-	2: 31
+						-	3: 49
+						-	4: 41
+						-	5: 30
 						
-			-	understand	-	1: 30
-							-	2: 31
-							-	3: 49
-							-	4: 41
-							-	5: 30
+		-	environment		-	1: 30
+						-	2: 31
+						-	3: 49
+						-	4: 41
+						-	5: 30
+
+		-	selfcheck		-	1: 30
+						-	2: 31
+						-	3: 49
+						-	4: 41
+						-	5: 30
+
+		-	suggestion		-	comment		-	1: blarblar
+									-	2: blarblarblar
+										...
+											
+											
+											
+											
+											
+											
+question	-	name1			-	content	-	blarblar
+		-	name2			-	content	-	blarblar2
+		...
+			
+			
+			
+			
+			
+			
+quiz		-	quest			-	1		-	blarblar
+						...
 						
-			-	lecturer	-	1: 30
-							-	2: 31
-							-	3: 49
-							-	4: 41
-							-	5: 30
+		-	answer			-	1		-	rightanswer
+						...
 						
-			-	environment	-	1: 30
-							-	2: 31
-							-	3: 49
-							-	4: 41
-							-	5: 30
-						
-			-	selfcheck	-	1: 30
-							-	2: 31
-							-	3: 49
-							-	4: 41
-							-	5: 30
-						
-			-	suggestion	-	comment	-	1: blarblar
-											2: blarblarblar
-											...
-											
-											
-											
-											
-											
-											
-question	-	name1		-	content	-	blarblar
-			-	name2		-	content	-	blarblar2
-			...
-			
-			
-			
-			
-			
-			
-quiz		-	quest		-	1		-	blarblar
-				...
-			-	answer		-	1		-	rightanswer
-				...
-			-	useranswer	-	user1	-	heranswer
-							-	user2	-	hisanswer
-							...
+		-	useranswer		-	user1		-	heranswer
+						-	user2		-	hisanswer
+						...
 			
 			
 			
