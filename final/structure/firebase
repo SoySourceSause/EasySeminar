@@ -51,8 +51,8 @@ survey		-	help			-	1: 30		//(points about 'help'): (how many people voted for th
 											
 											
 											
-question	-	name1			-	content	-	blarblar
-		-	name2			-	content	-	blarblar2
+question	-	name1			-	content		-	blarblar
+		-	name2			-	content		-	blarblar2
 		...
 			
 			
