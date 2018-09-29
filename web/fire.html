@@ -1,0 +1,30 @@
+(function() {
+	
+	const config = {
+	    apiKey: "AIzaSyDfsQMwcBdEZ7XBTUnfb6sgOSX_xUDnBGE",
+	    authDomain: "writefireb.firebaseapp.com",
+	    databaseURL: "https://writefireb.firebaseio.com",
+	    projectId: "writefireb",
+	    storageBucket: "writefireb.appspot.com",		
+	// apiKey: "AIzaSyBvF6B8TvDp43PJgpDMKsSYlDDq9vPJUwE",
+	// authDomain: "webquickgo.firebaseapp.com",
+	// databaseURL: "https://webquickgo.firebaseio.com",
+	// storageBucket: "webquickgo.appspot.com",
+	// apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
+ //    authDomain: "easyseminardb.firebaseapp.com",
+ //    databaseURL: "https://easyseminardb.firebaseio.com",
+ //    projectId: "easyseminardb",
+ //    storageBucket: "easyseminardb.appspot.com",
+	};
+	
+	firebase.initializeApp(config);
+	var database = firebase.database();
+	function writeUserData(username, phonenumber,email, imageUrl) {
+	  firebase.database().ref('users/' + userId).set({
+	    username: name,
+	    email: email,
+	    profile_picture : imageUrl
+	  });
+	}	
+	writeUserData('폰콘','이소이', 'thdl14', 'eifjsielfj.com');
+}());
