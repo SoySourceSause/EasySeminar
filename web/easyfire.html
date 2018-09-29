@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>simple sample</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.4.5.min.css">
+<script src="jquery.mobile/jquery-3.3.1.min.js"></script>
+<script src="jquery.moblile/jquery.mobile-1.4.5.min.js"></script>
+
+<script src="cordova.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script>
+	// JavaScript Document
+(function() {
+	
+	const config = {
+	    apiKey: "AIzaSyDfsQMwcBdEZ7XBTUnfb6sgOSX_xUDnBGE",
+	    authDomain: "writefireb.firebaseapp.com",
+	    databaseURL: "https://writefireb.firebaseio.com",
+	    projectId: "writefireb",
+	    storageBucket: "writefireb.appspot.com",		
+	// apiKey: "AIzaSyBvF6B8TvDp43PJgpDMKsSYlDDq9vPJUwE",
+	// authDomain: "webquickgo.firebaseapp.com",
+	// databaseURL: "https://webquickgo.firebaseio.com",
+	// storageBucket: "webquickgo.appspot.com",
+	// apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
+ //    authDomain: "easyseminardb.firebaseapp.com",
+ //    databaseURL: "https://easyseminardb.firebaseio.com",
+ //    projectId: "easyseminardb",
+ //    storageBucket: "easyseminardb.appspot.com",
+	};
+	
+	firebase.initializeApp(config);
+	var database = firebase.database();
+	function writeUserData(userId, name, email, imageUrl) {
+	  firebase.database().ref('users/' + userId).set({
+	    username: name,
+	    email: email,
+	    profile_picture : imageUrl
+	  });
+	}	
+	writeUserData('아이디는','이이이름 ', '@gmgjd', 'www.ndifsjl.com');
+}());
+</script>
+</head>
+
+<body>
+	
+
+
+<!-- <script src = "writedb.js"></script> -->
+
+
+</body>
+</html>
