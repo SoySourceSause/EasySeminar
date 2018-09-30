@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>파일 올리기</title>
+  <style media="screen">
+    body {
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    #uploader {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 50%;
+      margin-bottom: 10px;
+
+    }
+  </style>
+  <progress value="0" max="100" id="uploader">0%</progress>
+  <input type="file" value="upload" id="fileButton" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+
+  <script src="cordova.js"></script>
+  
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
+      authDomain: "easyseminardb.firebaseapp.com",
+      databaseURL: "https://easyseminardb.firebaseio.com",
+      projectId: "easyseminardb",
+      storageBucket: "easyseminardb.appspot.com",
+      messagingSenderId: "817545283146"
+    };
+    firebase.initializeApp(config);
+
+    // Get elements
+    var uploader = document.getElementById('uploader');
+    var fileButton = document.getElementById('fileButton');
+
+    // Listen for file selection
+
+    fileButton.addEventListener('change', function(e) {
+      //Get file
+      var file = e.target.files[0];
+
+      //Create a storage ref
+      var storageRef = firebase.storage().ref('Seminar_library/data');
+      // Upload file
+      var task = storageRef.put(file);
+
+      //Update progress bar
+      task.on('state_changed', 
+        function progress(snapshot){
+          var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          uploader.value = percentage;
+        },
+
+        function error(err) {
+          console.log('error');
+        },
+
+        function complete(){
+          console.log('success');
+        }
+      );
+        
+
+    });
+  </script>
+
+</head>
+
+<body>
+
+
+
+
+
+</body>
+</html>
