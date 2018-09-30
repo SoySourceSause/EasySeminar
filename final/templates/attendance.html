@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>실제 참여 수강생 정보</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+
+  </head>
+
+  <body>
+    <div>수강생 목록은 다음과 같습니다</div>
+    <ul id = 'present'></ul>
+    <script>
+      const config = {
+      
+        apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
+        authDomain: "easyseminardb.firebaseapp.com",
+        databaseURL: "https://easyseminardb.firebaseio.com",
+        projectId: "easyseminardb",
+        storageBucket: "easyseminardb.appspot.com", 
+      };  
+      firebase.initializeApp(config);
+      label = 'personal'
+      const prelabel = document.getElementById(label);   
+      const ulList = document.getElementById('present');
+      const dbReflabel = firebase.database().ref().child(label);
+
+      //Sync object changes
+      dbReflabel.on('value', snap => {
+        prelabel.innerText = JSON.stringify(snap.val(),null, 3);
+      });
+      
+      //Sync object changes
+      dbReflabel.on('child_added', snap => {
+        const li = document.createElement('li');
+        li.innerText = snap.key;
+        ulList.appendChild(li);
+
+        
+      }); 
+     
+    </script>
+    <form action="/table">
+      <input type="submit" value="수강생 상세 정보 확인">
+      <br><br>
+    </form>
+
+
+  </body>
+</html>

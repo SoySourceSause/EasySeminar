@@ -1,0 +1,93 @@
+
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+  </head>
+
+  <body>
+    <title>참가자 상세정보</title>
+    <ul id = 'present'>
+
+    </ul>
+    <ul id = 'peopledata'></ul>
+    <!-- <ul id = 'namenodee'></ul> -->
+    <script>
+      const config = {
+      
+        apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
+        authDomain: "easyseminardb.firebaseapp.com",
+        databaseURL: "https://easyseminardb.firebaseio.com",
+        projectId: "easyseminardb",
+        storageBucket: "easyseminardb.appspot.com", 
+      };  
+
+      firebase.initializeApp(config);
+      label = 'personal'
+      const dbref = firebase.database().ref('personal/pp/age').value;
+      // document.write(dbref);
+      // document.write('@@hi');
+      const prelabel = document.getElementById(label);   
+      const ulList = document.getElementById('present');
+      var detailList = document.createElement('li');
+      var namenode = document.getElementById('namenodee');
+      const dbReflabel = firebase.database().ref().child(label);
+      const dbRefage = dbReflabel.child('age');
+      
+            //Sync label changes
+      dbReflabel.on('value',snap => {
+        prelabel.innerText = JSON.stringify(snap.val(),null,3);
+      });
+      // document.write('hi');
+      // document.write(dbReflabel.innerText);
+      // dbReflabel.on('value', snap => {
+      //   prelabel.innerText = JSON.stringify(snap.val(),null, 3);
+      // });
+      
+         //Sync object changes
+      dbReflabel.on('child_added', snap => {
+        const li = document.createElement('li');
+        const dut = document.createElement('p');
+        li.innerText = snap.key;
+
+    
+        const dbref = firebase.database().ref('personal/'+li.innerText);
+        
+        dbref.on('child_added', snap =>{
+          const details = document.createElement('li');
+      	details.innerText = snap.val();
+          details.id = snap.key;
+          detailList.appendChild(details);
+          dut.innerText = dut.innerText + '\n 	' + '	-'+snap.key + ': ' + details.innerText;
+          // li.appendChild(details);
+        });
+
+        dut.innerText =  'name: ' + li.innerText + dut.innerText + '\n\n';
+
+      	
+        
+        
+
+        // document.write(dbReflabel.child(snap.key).child('age').val());
+        // testage.appendChild(details);
+        ulList.appendChild(dut);
+        
+      }); 
+
+
+     
+    </script>
+
+    <form action="/">
+      <input type="submit" value="Home">
+      <br><br>
+    </form>
+
+
+  </body>
+</html>
