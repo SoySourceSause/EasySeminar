@@ -1,0 +1,60 @@
+
+<!doctype html>
+<html>
+<head>
+  
+  <title>download form firebase</title>
+
+
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+ 
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+  
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-functions.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-storage.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script> -->
+
+  
+  <button type="button" id="downloadButton">자료</button>
+  <script>
+    // Initialize Firebase
+
+    var config = {
+      apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
+      authDomain: "easyseminardb.firebaseapp.com",
+      databaseURL: "https://easyseminardb.firebaseio.com",
+      projectId: "easyseminardb",
+      storageBucket: "easyseminardb.appspot.com",
+      messagingSenderId: "817545283146"
+    };
+    firebase.initializeApp(config);
+    
+    var storage = firebase.storage();
+
+    
+    var downloadButton = document.getElementById('downloadButton');
+    var imgRef = storage.ref('Seminar_library/data');
+    downloadButton.addEventListener('click', function(){
+      imgRef.getDownloadURL().then(function(url){
+        console.log(url);
+        location.href = url;
+      });
+    });
+
+
+  
+  </script>
+
+</head>
+
+
+
+<body>
+
+</body>
+</html>
