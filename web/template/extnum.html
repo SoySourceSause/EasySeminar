@@ -15,49 +15,35 @@
     <ul id = 'environment'>
 
     </ul>
-    <ul id = 'peopledata'></ul>
+    <div id = 'num'><div>
     <!-- <ul id = 'namenodee'></ul> -->
     <script>
       const config = {
       
-        apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
-        authDomain: "easyseminardb.firebaseapp.com",
-        databaseURL: "https://easyseminardb.firebaseio.com",
-        projectId: "easyseminardb",
-        storageBucket: "easyseminardb.appspot.com", 
+        //ToDo: Get your own, at firebase.google.com
       };  
 
       firebase.initializeApp(config);
       label = 'survey'
       
-      
+      // reload:
       const prelabel = document.getElementById(label);   
+      const uiui = document.getElementById('num'); 
       const ulList = document.getElementById('environment');
       var howmanyList = document.createElement('li');
       // var namenode = document.getElementById('namenodee');
-      const dbenvironment = firebase.database().ref().child(label);
+      const dbenvironment = firebase.database().ref().child(label).child('environment').child('1');
 
-      dbenvironment.on('child_added', snap => {
-        const li = document.createElement('li');
-        // const show;
-        li.innerText = snap.val();
-        li.id = 'environment/'+snap.key;
-        ulList.appendChild(li);
-        // show = "environment\n" + snap.key + li.innerText,
-        const env1 = (document.getElementById('environment/1').innerText);//데이터 얻는 예시
+      dbenvironment.on('value', snap => {
         
-      });    
-      dbenvironment.on('child_changed', snap => {
-        const liChanged = document.getElementById(snap.key);
-        liChanged.innerText = snap.val();
-        
+        uiui.innerText = (snap.val());//*.innerText*
+
+     
+
       });
+      
+      
 
-      // function getsurvey(environment, hard, help, satisfy, suggestion, understand){
-      //   var postData = {
-
-      //   }
-  
       
       
     </script>
