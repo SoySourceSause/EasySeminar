@@ -1,0 +1,48 @@
+{<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+  </head>
+  <body>
+    <h1>Firebase</h1>
+    <p>데이터 추가 확인하기</p>
+    <p>submit complete</p><br>
+    <div style="display:none;" id ="name">{{name}}</div>
+    <div style="display:none;" id ="school">{{school}}</div>
+    <div style="display:none;" id ="department">{{department}}</div>
+    <div style="display:none;" id ="age">{{age}}</div>
+    <div style="display:none;" id ="contact">{{contact}}</div>
+    <div style="display:none;" id ="email">{{email}}</div>
+
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
+      authDomain: "easyseminardb.firebaseapp.com",
+      databaseURL: "https://easyseminardb.firebaseio.com",
+      projectId: "easyseminardb",
+      storageBucket: "easyseminardb.appspot.com",
+      messagingSenderId: "817545283146"
+    };
+
+    firebase.initializeApp(config);
+     
+    var PostKey = firebase.database().ref().child('posts').push().key;
+
+    var postData_name = document.getElementById("name").innerHTML;
+
+    var updates = {};
+
+    updates['/personal/' + PostKey] = postData_name;
+    firebase.database().ref().update(updates);
+
+    var postData_school = document.getElementById("school").innerHTML;
+    var postData_department = document.getElementById("department").innerHTML;
+    var postData_age = document.getElementById("age").innerHTML;
+    var postData_contact = document.getElementById("contact").innerHTML;
+    var postData_email = document.getElementById("email").innerHTML;
+
+    
+           
+  </script>
+  </body>

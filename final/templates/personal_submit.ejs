@@ -1,0 +1,50 @@
+{<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+  </head>
+  <body>
+    <h1>Firebase</h1>
+    <p>데이터 추가 확인하기</p>
+    <p>submit complete</p><br>
+    <div style="display:none;" id ="name">{{name}}</div>
+    <div style="display:none;" id ="school">{{school}}</div>
+    <div style="display:none;" id ="department">{{department}}</div>
+    <div style="display:none;" id ="age">{{age}}</div>
+    <div style="display:none;" id ="contact">{{contact}}</div>
+    <div style="display:none;" id ="email">{{email}}</div>
+
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
+      authDomain: "easyseminardb.firebaseapp.com",
+      databaseURL: "https://easyseminardb.firebaseio.com",
+      projectId: "easyseminardb",
+      storageBucket: "easyseminardb.appspot.com",
+      messagingSenderId: "817545283146"
+    };
+
+    var name = document.getElementById("name").innerHTML;
+    var school = document.getElementById("school").innerHTML;
+    var department = document.getElementById("department").innerHTML;
+    var age = document.getElementById("age").innerHTML;
+    var contact = document.getElementById("contact").innerHTML;
+    var email = document.getElementById("email").innerHTML;
+
+    firebase.initializeApp(config);
+  var database = firebase.database();
+  function writeUserData(name, school, department, age, contact, email) {
+    firebase.database().ref('personal/' + name).set({
+      school: school,
+      department: department,
+      age : age,
+      contact: contact,
+      email: email
+    });
+  } 
+  
+  writeUserData(name,school, department, age, contact, email);
+           
+  </script>
+  </body>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style >
+	h1 {
+		color: #3A405A;
+	}
+
+	input[type=text]{
+
+  
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	}
+
+	input[type=submit]{
+
+  
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	}
+
+	input.underline {border:0;border-bottom:1 solid #FF0000;}
+
+	div {
+	border-radius: 3px;
+    background-color: #F9DEC9;
+    padding: 50px;
+	}
+	</style>
+	<title></title>
+</head>
+<body>
+
+	<form action="/personal_submit" method="POST">
+<div>
+	<h1>인적사항</h1>
+	<ul>
+
+
+		<li>이름</li>
+			<input type="text"  class="w3-input w3-border w3-round" id ="name" name="name" size="12" placeholder="Your name">
+			<br><br>
+		<li>학교</li>
+			<input type="text"  class="w3-input w3-border w3-round" id = "school" name="school" size="20" placeholder="Your school "><br><br>
+		<li>학과</li>
+			<input type="text"  class="w3-input w3-border w3-round" id = "department" name="department" size="20" placeholder="Your department"><br><br>
+		<li>나이</li>
+			<input type="text" class="w3-input w3-border w3-round" id = "age" name="age" size="20" placeholder="Your age"><br><br>
+		<li>전화번호 ( e.g.01012345678 )</li>
+			<input type="text"  class="w3-input w3-border w3-round" id = "contact" name="contact" size="20" placeholder="Your phone number"><br><br>
+		<li>이메일</li>
+			<input type="text" class="w3-input w3-border w3-round" id = "email" name="email" size="20" placeholder="Your Email address">
+			<br><br>
+
+		<input type="submit" value="Submit">
+	</ul>
+	</form>
+</div>
+</body>
+</html>

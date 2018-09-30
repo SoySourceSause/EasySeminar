@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title></title>
+</head>
+<body>
+
+	<form action="/survey_submit" method="POST">
+	<h1>설문지</h1>
+	<ol>
+		<li>강의의 내용은 얼마나 이해되었습니까?</li>
+			<input type="radio" name="understand" id="understand" value="1"> 1<br>
+			<input type="radio" name="understand" id="understand" value="2"> 2<br>
+			<input type="radio" name="understand" id="understand" value="3"> 3<br>
+			<input type="radio" name="understand" id="understand" value="4"> 4<br>
+			<input type="radio" name="understand" id="understand" value="5"> 5<br><br>
+
+		<li>강의의 내용이 얼마나 도움이 되었습니까?</li>
+			<input type="radio" name="helping" id="helping" value="1"> 1<br>
+			<input type="radio" name="helping" id="helping" value="2"> 2<br>
+			<input type="radio" name="helping" id="helping" value="3"> 3<br>
+			<input type="radio" name="helping" id="helping" value="4"> 4<br>
+			<input type="radio" name="helping" id="helping" value="5"> 5<br><br>
+
+		<li>강의의 난이도는 적절하다고 생각하십니까?</li>
+			<input type="radio" name="hard" id="hard" value="1"> 1<br>
+			<input type="radio" name="hard" id="hard" value="2"> 2<br>
+			<input type="radio" name="hard" id="hard" value="3"> 3<br>
+			<input type="radio" name="hard" id="hard" value="4"> 4<br>
+			<input type="radio" name="hard" id="hard" value="5"> 5<br><br>
+
+		<li>강의 환경에 대한 만족도는 얼마입니까?</li>
+			<input type="radio" name="environment" id="envirnment" value="1"> 1<br>
+			<input type="radio" name="environment" id="envirnment" value="2"> 2<br>
+			<input type="radio" name="environment" id="envirnment" value="3"> 3<br>
+			<input type="radio" name="environment" id="envirnment" value="4"> 4<br>
+			<input type="radio" name="environment" id="envirnment" value="5"> 5<br><br>
+
+		<li>강의에 대한 전반적인 만족도는 얼마입니까?</li>
+			<input type="radio" name="satisfy" id="satisfy" value="1"> 1<br>
+			<input type="radio" name="satisfy" id="satisfy" value="2"> 2<br>
+			<input type="radio" name="satisfy" id="satisfy" value="3"> 3<br>
+			<input type="radio" name="satisfy" id="satisfy" value="4"> 4<br>
+			<input type="radio" name="satisfy" id="satisfy" value="5"> 5<br><br>
+
+		<li>개선 방안 혹은 건의 사항</li><br>
+			<textarea name="suggestion" id="suggestion" rows="5" cols="60"></textarea>
+		<br><br>
+		<input type="submit" value="Submit">
+	</ol>
+	</form>
+
+</body>
+</html>

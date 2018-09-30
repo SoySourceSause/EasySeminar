@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <html>
 
@@ -26,7 +25,6 @@
         projectId: "easyseminardb",
         storageBucket: "easyseminardb.appspot.com", 
       };  
-
       firebase.initializeApp(config);
       label = 'personal'
       const dbref = firebase.database().ref('personal/pp/age').value;
@@ -54,7 +52,6 @@
         const li = document.createElement('li');
         const dut = document.createElement('p');
         li.innerText = snap.key;
-
     
         const dbref = firebase.database().ref('personal/'+li.innerText);
         
@@ -66,20 +63,15 @@
           dut.innerText = dut.innerText + '\n 	' + '	-'+snap.key + ': ' + details.innerText;
           // li.appendChild(details);
         });
-
         dut.innerText =  'name: ' + li.innerText + dut.innerText + '\n\n';
-
       	
         
         
-
         // document.write(dbReflabel.child(snap.key).child('age').val());
         // testage.appendChild(details);
         ulList.appendChild(dut);
         
       }); 
-
-
      
     </script>
 
