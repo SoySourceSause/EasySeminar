@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -15,17 +12,23 @@
     <ul id = 'environment'>
 
     </ul>
-    <div id = 'num'><div>
+    <div id = 'num'></div>
     <!-- <ul id = 'namenodee'></ul> -->
     <script>
       const config = {
-      
-        //ToDo: Get your own, at firebase.google.com
+        apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
+        authDomain: "easyseminardb.firebaseapp.com",
+        databaseURL: "https://easyseminardb.firebaseio.com",
+        projectId: "easyseminardb",
+        storageBucket: "easyseminardb.appspot.com", 
       };  
-
       firebase.initializeApp(config);
       label = 'survey'
-      
+            function writeUserData(content, number) {
+        firebase.database().ref('survey/' + content).set({
+          '1': number
+        });
+      } 
       // reload:
       const prelabel = document.getElementById(label);   
       const uiui = document.getElementById('num'); 
@@ -33,17 +36,18 @@
       var howmanyList = document.createElement('li');
       // var namenode = document.getElementById('namenodee');
       const dbenvironment = firebase.database().ref().child(label).child('environment').child('1');
-
       dbenvironment.on('value', snap => {
         
         uiui.innerText = (snap.val());//*.innerText*
-
-     
-
+        
+      
       });
+      //초기화 시간
+      setTimeout(function() {
+        writeUserData('environment', Number(uiui.innerText)+1);
+       
+      }, 5000);
       
-      
-
       
       
     </script>
