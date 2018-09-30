@@ -5,13 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style >
+
 	h1 {
-		color: #3A405A;
+		color: #ffffff;
 	}
 
 	input[type=text]{
-
-  
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -21,8 +20,6 @@
 	}
 
 	input[type=submit]{
-
-  
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -35,36 +32,44 @@
 
 	div {
 	border-radius: 3px;
-    background-color: #F9DEC9;
+    background-color: #3A405A;
     padding: 50px;
+	}
+
+	li{
+		color: #ffffff;
+
+	}
+
+	ul{
+		list-style: none;
 	}
 	</style>
 	<title></title>
 </head>
 <body>
 
-	<form action="/personal_submit" method="POST">
 <div>
-	<h1>인적사항</h1>
+	<h1>Personal Information</h1>
 	<ul>
-
-
+	<h6>
+	<form action="/personal_submit" method="POST">
 		<li>이름</li>
-			<input type="text"  class="w3-input w3-border w3-round" id ="name" name="name" size="12" placeholder="Your name">
+			<input type="text"  id ="name" name="name" size="12" placeholder="Your name">
 			<br><br>
 		<li>학교</li>
-			<input type="text"  class="w3-input w3-border w3-round" id = "school" name="school" size="20" placeholder="Your school "><br><br>
+			<input type="text"   id = "school" name="school" size="20" placeholder="Your school "><br><br>
 		<li>학과</li>
-			<input type="text"  class="w3-input w3-border w3-round" id = "department" name="department" size="20" placeholder="Your department"><br><br>
+			<input type="text"   id = "department" name="department" size="20" placeholder="Your department"><br><br>
 		<li>나이</li>
-			<input type="text" class="w3-input w3-border w3-round" id = "age" name="age" size="20" placeholder="Your age"><br><br>
+			<input type="text" id = "age" name="age" size="20" placeholder="Your age"><br><br>
 		<li>전화번호 ( e.g.01012345678 )</li>
-			<input type="text"  class="w3-input w3-border w3-round" id = "contact" name="contact" size="20" placeholder="Your phone number"><br><br>
+			<input type="text"  id = "contact" name="contact" size="20" placeholder="Your phone number"><br><br>
 		<li>이메일</li>
-			<input type="text" class="w3-input w3-border w3-round" id = "email" name="email" size="20" placeholder="Your Email address">
+			<input type="text" id = "email" name="email" size="20" placeholder="Your Email address">
 			<br><br>
-
 		<input type="submit" value="Submit">
+	</h6>
 	</ul>
 	</form>
 </div>
