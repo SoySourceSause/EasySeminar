@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, url_for
 app = Flask(__name__)
 
 @app.route('/')
-def user():
+def index():
 	return render_template('index.html')
 
 @app.route('/personal')
@@ -37,15 +37,15 @@ def survey():
 
 
 @app.route('/master')
-def user():
+def master():
 	return render_template('mindex.html')
 
 @app.route('/attendance')
-def personal():
+def attendance():
 	return render_template('attendance.html')
 
 @app.route('/table')
-def question():
+def table():
 	return render_template('peopledetail.html')
 
 # @app.route('/personal_submit', methods = ['POST'])
@@ -59,7 +59,7 @@ def question():
 # 	return render_template('personal_submit.ejs', name=name, school=school, department=department, age=age, contact=contact, email=email)
 
 @app.route('/masterlibrary')
-def question():
+def masterlibrary():
 	return render_template('upload.html')
 
 # @app.route('/question_submit', methods = ['POST'])
@@ -71,17 +71,20 @@ def question():
 
 
 @app.route('/checkquestion')
-def survey():
+def checkquestion():
 	return render_template('checkquestion.html')
 
 @app.route('/makequiz')
-def survey():
+def makequiz():
 	return render_template('makequiz.html')
 
 @app.route('/quizresult')
-def survey():
+def quizresult():
 	return render_template('quizresult.html')
 
+@app.route('/download')
+def download():
+	return render_template('download.html')
 # @app.route('/survey_submit', methods = ['POST'])
 # def survey_submit():
 # 	understand = request.form['understand']
@@ -117,4 +120,4 @@ def quiz_submit():
 	return render_template('quiz_submit.ejs', name=name, quiz=quiz)
   
 if __name__ == '__main__':
-	app.run(debug=True, host='0.0.0.0')
+	app.run(debug=True)
