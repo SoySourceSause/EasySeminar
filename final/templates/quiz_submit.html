@@ -2,14 +2,35 @@
   <head>
     <meta charset="UTF-8">
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+
+    <style>
+      div{
+        background-color: #C8C7C7;
+        margin: 10px;
+        padding: 20px;
+        text-align: middle;
+      }
+
+      input[type=submit]{
+        position: relative;
+        padding: 12px 20px;
+        margin: 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        left: 10px;  
+      }
+    </style>
   </head>
   <body>
 
-    <h1>퀴즈가 제출되었습니다.</h1>
-
-    <p>quiz complete</p><br>
+  <div>
+    <h1>Successfully Submitted</h1>
+    <h4>데이터 전송이 완료되었습니다</h4>
+  </div>
     <div style="display:none;" id ="nameq">{{nameq}}</div>
-    <div style="display:none;" id ="content">{{content}}</div>
+    <div style="display:none;" id ="quiz">{{quiz}}</div>
 
   <script>
   // Initialize Firebase
@@ -22,15 +43,17 @@
       messagingSenderId: "817545283146"
     };
     var nameq = document.getElementById("nameq").innerHTML;
-    var content = document.getElementById("content").innerHTML;
+    var quiz = document.getElementById("quiz").innerHTML;
     firebase.initializeApp(config);
   var database = firebase.database();
-  function writeUserData(nameq, content) {
-    firebase.database().ref('question/' + nameq).set({
-      content: content
+
+  function writeUserData(nameq, quiz) {
+    firebase.database().ref('quiz/' + '1').set({
+      이름: nameq,
+      정답: quiz
     });
   } 
-  writeUserData(nameq,content);
+  writeUserData(nameq,quiz);
            
   </script>
-  </body>
+</body>
