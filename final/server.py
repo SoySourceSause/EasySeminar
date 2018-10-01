@@ -82,6 +82,10 @@ def checkquestion():
 def makequiz():
 	return render_template('makequiz.html')
 
+# @app.route('/makequiz_submit')
+# def makequiz_submit():
+# 	return render_template('makequiz_submit.html')
+
 @app.route('/quizresult')
 def quizresult():
 	return render_template('quizresult.html')
@@ -89,15 +93,17 @@ def quizresult():
 @app.route('/download')
 def download():
 	return render_template('download.html')
-# @app.route('/survey_submit', methods = ['POST'])
-# def survey_submit():
-# 	understand = request.form['understand']
-# 	helping = request.form['helping']
-# 	hard = request.form['hard']
-# 	environment = request.form['environment']
-# 	satisfy = request.form['satisfy']
-# 	suggestion = request.form['suggestion']
-# 	return render_template('survey_submit.html', understand=understand, helping=helping, hard=hard, environment=environment, satisfy=satisfy, suggestion=suggestion)
+
+@app.route('/makequiz_submit', methods = ['POST'])
+def makequiz_submit():
+	makeq = request.form['makeq']
+	cho1 = request.form['cho1']
+	cho2 = request.form['cho2']
+	cho3 = request.form['cho3']
+	cho4 = request.form['cho4']
+	cho5 = request.form['cho5']
+	qanswer = request.form['qanswer']
+	return render_template('makequiz_submit.html',  makeq=makeq, cho1=cho1, cho2=cho2, cho3=cho3, cho4=cho4,cho5=cho5,  qanswer=qanswer)
 
 
 
