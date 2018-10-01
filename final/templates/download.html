@@ -23,7 +23,6 @@
   <button type="button" id="downloadButton">자료</button>
   <script>
     // Initialize Firebase
-
     var config = {
       apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
       authDomain: "easyseminardb.firebaseapp.com",
@@ -35,7 +34,6 @@
     firebase.initializeApp(config);
     
     var storage = firebase.storage();
-
     
     var downloadButton = document.getElementById('downloadButton');
     var imgRef = storage.ref('Seminar_library/data');
@@ -45,8 +43,6 @@
         location.href = url;
       });
     });
-
-
   
   </script>
 

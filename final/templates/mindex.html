@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
    
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/5.3.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="path/css/font-awesome.min.css">
 
     <style>
@@ -16,6 +16,7 @@
       padding: 0;
       width: 97.5%;
     }
+
     p{
       font-size: 150px;
       position: absolute;
@@ -24,12 +25,13 @@
       padding: 0;
       color: #ffffff;
     }
+
      h3{
       position: absolute;
       color: #ffffff;
       font-size: 50px;
       font-family: ;
-      left: 40%;
+      left: 270px;
       margin-top: 90px;
     }
     
@@ -45,146 +47,163 @@
       background-color: transparent;
       right: 10px;
     }
-    #attendance{
+
+    #personal{
     
-      margin-bottom: 00px;
-      width: 50%%;
+      margin-bottom: 10px;
+      width: 100%;
       height: 250px;
       background-color: #3A405A;
     }
-    #checkquestion{
-      margin-bottom: 0px;
+
+    #survey{
+      margin-bottom: 10px;
       width: 100%;
       height: 250px;
       background-color: #AEC5EB;
     }
-    #masterquiz{
-      margin-bottom: 0px;
+
+    #question{
+      margin-bottom: 10px;
       width: 100%;
       height: 250px;
       background-color: #F9DEC9;
     }
-    /*#quiz{
-      margin-bottom: 10px;
-      width: 100%;
-      height: 250px;
-      background-color: #E9AFA3;
-    }*/
-    #library{
+
+    #quiz{
       margin-bottom: 10px;
       width: 100%;
       height: 250px;
       background-color: #E9AFA3;
     }
-     .attendance_icon{
+    #download{
+      margin-bottom: 10px;
+      width: 100%;
+      height: 250px;
+      background-color: #df514c;
+    }
+
+     .personal_icon{
       top: 0;
     }
-    .checkquestion_icon{
+
+    .survey_icon{
       top: 275px;
     }
-    .masterquiz_icon{
+
+    .question_icon{
       top: 540px;
       right: 20px;
     }
+
     .quiz_icon{
       top: 800px;
     }
-     .library_icon{
+
+     .download_icon{
       top: 1050px;
     }
-    #attendance_button{
+
+    #personal_button{
       top: 10px;
-      width: 100%; height: 100%;
-     
     }
-    #checkquestion_button{
+
+    #survey_button{
       top: 275px;
     }
-    #masterquiz_button{
+
+    #question_button{
       top: 535px;
     }
+
    #quiz_button{
       top: 795px;
     }
-   #library_button{
-      top: 1300px;
+
+   #download_button{
+      top: 1100px;
     }
-    #attendance_info{
+
+    #personal_info{
       
     }
-    #checkquestion_info{
+
+    #survey_info{
       
     }
     
-    #masterquiz_info{
+    #question_info{
      
     }
+
     #quiz_info{
       
     }
-    #library_info{
+
+    #download_info{
       
     }
+
     </style>
   </head>
 
   <body>
-<!--     <form action="/attendance">
-  <div class="attendance">
-  <p class="attendance_icon">  
+<!--     <form action="/personal">
+  <div class="personal">
+  <p class="personal_icon">  
   <i class="far fa-address-card"></i></p>
       <input class="w3-input w3-border-0"  type="submit" value="인적사항" >
 <br>
     </form>     -->
- <div id="attendance">
+ <div id="personal">
 <form action="/attendance">
  
-  <p id="attendance_icon" class="attendance_icon">  <i class="far fa-address-card" ></i> </p>
-  <input class="w3-input w3-border-0" id="attendance_button"  type="submit" value=" " >
-  <h3 id=attendance_info>Attendance Information</h3>
+  <p id="personal_icon" class="personal_icon">  <i class="far fa-address-card" ></i> </p>
+  <input class="w3-input w3-border-0" id="personal_button"  type="submit" value=" " >
+  <h3 id=personal_info>Attendance Information</h3>
 
     </form>   
 
 
   </div>
 
-  <div id="checkquestion">
-    <form action="/checkquestion">
-    <p id="checkquestion_icon" class="checkquestion_icon">
+  <div id="survey">
+    <form action="/surveyresult">
+    <p id="survey_icon" class="survey_icon">
     <i class="far fa-list-alt"></i></p>
-      <input class="w3-input w3-border-0" id="checkquestion_button" type="submit" value=" ">
-      <h3 id=checkquestion_info>check questions</h3>
+      <input class="w3-input w3-border-0" id="survey_button" type="submit" value=" ">
+      <h3 id=survey_info>Survey Result</h3>
 
     </form>
   </div>
 
-  <div id="masterquiz">
+  <div id="question">
+    <form action="/checkquestion">
+  <p id="question_icon" class="question_icon">
+  <i class="fas fa-question"></i>  </p>
+      <input class="w3-input w3-border-0" id="question_button" type="submit" value=" ">
+      <h3 id="question_into">Check Question</h3>
+
+    </form>
+  </div>
+
+  <div id="quiz">
     <form action="/masterquiz">
-  <p id="masterquiz_icon" class="masterquiz_icon">
-  <i class="fas fa-masterquiz"></i>  </p>
-      <input class="w3-input w3-border-0" id="masterquiz_button" type="submit" value=" ">
-      <h3 id="masterquiz_into">quiz</h3>
-
-    </form>
-  </div>
-
- <!--  <div id="quiz">
-    <form action="/quiz">
   <p id="quiz_icon" class="quiz_icon">
   <i class="fas fa-check"></i>
   </p>
       <input class="w3-input w3-border-0" id="quiz_button" type="submit" value=" ">
       <h3 id="quiz_into">Quiz</h3>
     </form>
-  </div> -->
+  </div>
 
-  <div id="library">
+  <div id="download">
     <form action="/masterlibrary">
-  <p id="library_icon" class="library_icon">
+  <p id="download_icon" class="download_icon">
   <i class="far fa-folder"></i>
   </p>
-      <input class="w3-input w3-border-0" id="library_button" type="submit" value=" ">
-      <h3 id="library_into">Library</h3>
+      <input class="w3-input w3-border-0" id="download_button" type="submit" value=" ">
+      <h3 id="download_into">Library</h3>
     </form>
   </div>
 

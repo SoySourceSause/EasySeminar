@@ -5,10 +5,32 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <style >
+          div {
+  border-radius: 3px;
+    background-color: #F9DEC9;
+    padding: 50px;
+  height: 100%;
+    width: 100%;
+  }
+  h1 {
+    color: #3A405A;
+  }
+  input[type=submit]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+    </style>
   </head>
 
   <body>
-    <title>질문 확인</title>
+  <div>
+    <h1>Check Question</h1>
     <ul id = 'studentq'>
 
     </ul>
@@ -55,14 +77,14 @@
         
         dbref.on('child_added', snap =>{
           const details = document.createElement('li');
-      	details.innerText = snap.val();
+        details.innerText = snap.val();
           details.id = snap.key;
           detailList.appendChild(details);
-          dut.innerText = dut.innerText + '\n 	' + '	-'+snap.key + ': ' + details.innerText;
+          dut.innerText = dut.innerText + '\n   ' + ' -'+snap.key + ': ' + details.innerText;
           // li.appendChild(details);
         });
         dut.innerText =  'name: ' + li.innerText + dut.innerText + '\n\n';
-      	
+        
         
         
         // document.write(dbReflabel.child(snap.key).child('age').val());
@@ -74,6 +96,6 @@
     </script>
 
 
-
+</div>
   </body>
 </html>

@@ -23,7 +23,6 @@
     <div style="display:none;" id ="cho3">{{cho3}}</div>
     <div style="display:none;" id ="cho4">{{cho4}}</div>
     <div style="display:none;" id ="cho5">{{cho5}}</div>
-
     <div style="display:none;" id ="qanswer">{{qanswer}}</div> -->
   <script>
   // Initialize Firebase
@@ -41,9 +40,7 @@
     var cho3 = document.getElementById("cho3").innerHTML;
     var cho4 = document.getElementById("cho4").innerHTML;
     var cho5 = document.getElementById("cho5").innerHTML;
-
     var qanswer = document.getElementById("qanswer").innerHTML;
-
     firebase.initializeApp(config);
   var database = firebase.database();
   function writequest(makeq) {
@@ -52,7 +49,6 @@
     });
   } 
   writequest(makeq);
-
   function writechoice(cho1,cho2,cho3,cho4,cho5) {
     firebase.database().ref('quiz/choice/').set({
       1: cho1,
@@ -63,7 +59,6 @@
     });
   } 
   writechoice(cho1,cho2,cho3,cho4,cho5);
-
   
   
   function writeUserData(qanswer) {
@@ -74,4 +69,4 @@
   writeUserData(qanswer);
            
   </script>
-  </body>
+</body>

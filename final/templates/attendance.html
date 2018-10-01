@@ -7,10 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
 
+    <style >
+      div {
+        margin: 10px;
+  border-radius: 5px;
+    background-color: #3A405A;
+    padding: 50px;
+  }
+
+  h1 {
+    color: #ffffff;
+  }
+  ul{
+    color: #ffffff;
+  }
+
+  input[type=submit]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+    </style>
   </head>
 
   <body>
-    <div>수강생 목록은 다음과 같습니다</div>
+  <div>
+    <h1>Attendance Information</h1>
     <ul id = 'present'></ul>
     <script>
       const config = {
@@ -41,10 +67,10 @@
      
     </script>
     <form action="/table">
-      <input type="submit" value="수강생 상세 정보 확인">
+      <input type="submit" value="Detail Information">
       <br><br>
     </form>
 
-
+    </div>
   </body>
 </html>
