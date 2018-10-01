@@ -4,16 +4,56 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<title></title>
 </head>
-<body>
+<style>
 
+	body{
+	width: 100%;
+
+	margin:0;
+	}
+	div {
+	border-radius: 3px;
+    background-color: #E9AFA3;
+    padding: 50px;
+	height: 100%;
+    width: 100%;
+	}
+	h1 {
+		color: #3A405A;
+	}
+	li{
+		color: #3A405A;
+	}
+	input[type=submit]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	}
+	input[type=text]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	}
+	ul{
+	list-style: none;
+	}
+</style>
+<body>
+<div>
 	<form action="/quiz_submit" method="POST">
 	<h1>Quiz</h1>
 	<ul>
 		
-		<li>이름</li>
+		<li style="font-weight: bold;">이름</li>
 			<input type="text"  class="w3-input w3-border w3-round" id ="nameq" name="nameq" size="12" placeholder="Your name"><br><br>
 			
-		<li>우리 팀명은?</li><br>
+		<li style="font-weight: bold;">우리 팀명은?</li><br>
 			<ol>
 			<li><input type="radio" name="quiz" id="quiz" value="1">폰콘<br><br>
 			</li>
@@ -32,6 +72,6 @@
 		<input type="submit" value="Submit">
 	</ul>
 	</form>
-
+</div>
 </body>
 </html>

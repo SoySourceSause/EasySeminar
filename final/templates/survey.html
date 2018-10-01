@@ -3,11 +3,49 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<title></title>
+	<style>
+	body{
+	width: 100%;
+	margin:0;
+	}
+		div {
+	border-radius: 3px;
+    background-color: #AEC5EB;
+    padding: 50px;
+
+    width: 100%;
+	}
+		h1 {
+		color: #3A405A;
+	}
+	input{
+		color: #3A405A;
+	
+	}
+	input[type=submit]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	}
+	textarea{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	}
+
+
+	</style>
 </head>
 <body>
-
+<div>
 	<form action="/survey_submit" method="POST">
-	<h1>설문지</h1>
+	<h1>Survey</h1>
 	<ol>
 		<li>강의의 내용은 얼마나 이해되었습니까?</li>
 			<input type="radio" name="understand" id="understand" value="1"> 1<br>
@@ -50,6 +88,6 @@
 		<input type="submit" value="Submit">
 	</ol>
 	</form>
-
+	</div>
 </body>
 </html>

@@ -2,23 +2,66 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<title></title>
+	<style>
+		div {
+	border-radius: 3px;
+    background-color: #F9DEC9;
+    padding: 50px;
+	height: 100%;
+    width: 100%;
+	}
+	h1 {
+		color: #3A405A;
+	}
+	li{
+		color: #3A405A;
+		font-weight: bold;
+	}
+	input[type=submit]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	}
+	input[type=text]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	}
+	textarea{
+		padding: 12px 20px;
+		display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	}
+	ul{
+	list-style: none;
+	}
+	</style>
 </head>
 <body>
-
+	<div>
 	<form action="/question_submit" method="POST">
 	<h1>Q&A</h1>
 	<ul>
 		<li>이름</li>
-			<textarea type="text" id ="nameq" name="nameq" size="10"></textarea><br><br>
+			<input type="text"  id ="nameq" name="nameq" size="12" placeholder="Your name">
 
 		<li>질문</li>
-			<textarea id ="content" name="content" rows="10" cols="50"></textarea><br><br>
+			<textarea id ="content" name="content" rows="5" placeholder="Your question" cols="30"></textarea><br><br>
 
 		<input type="submit" value="Submit">
 	</ul>
 	</form>
-
+	</div>
 </body>
 </html>
