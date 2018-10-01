@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+  </head>
+  <body>
+
+    <h1>퀴즈 문제가 제출되었습니다</h1>
+
+    <p>submit complete</p><br>
+    <div  id ="makeq">{{makeq}}</div>
+    <div  id ="cho1">{{cho1}}</div>
+    <div  id ="cho2">{{cho2}}</div>
+    <div  id ="cho3">{{cho3}}</div>
+    <div  id ="cho4">{{cho4}}</div>
+    <div  id ="cho5">{{cho5}}</div>
+
+    <div  id ="qanswer">{{qanswer}}</div>
+
+<!--     <div style="display:none;" id ="makeq">{{makeq}}</div>
+    <div style="display:none;" id ="cho1">{{cho1}}</div>
+    <div style="display:none;" id ="cho2">{{cho2}}</div>
+    <div style="display:none;" id ="cho3">{{cho3}}</div>
+    <div style="display:none;" id ="cho4">{{cho4}}</div>
+    <div style="display:none;" id ="cho5">{{cho5}}</div>
+
+    <div style="display:none;" id ="qanswer">{{qanswer}}</div> -->
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
+      authDomain: "easyseminardb.firebaseapp.com",
+      databaseURL: "https://easyseminardb.firebaseio.com",
+      projectId: "easyseminardb",
+      storageBucket: "easyseminardb.appspot.com",
+      messagingSenderId: "817545283146"
+    };
+    var makeq = document.getElementById("makeq").innerHTML;
+    var cho1 = document.getElementById("cho1").innerHTML;
+    var cho2 = document.getElementById("cho2").innerHTML;
+    var cho3 = document.getElementById("cho3").innerHTML;
+    var cho4 = document.getElementById("cho4").innerHTML;
+    var cho5 = document.getElementById("cho5").innerHTML;
+
+    var qanswer = document.getElementById("qanswer").innerHTML;
+
+    firebase.initializeApp(config);
+  var database = firebase.database();
+  function writequest(makeq) {
+    firebase.database().ref('quiz/quest/').set({
+      1: makeq
+    });
+  } 
+  writequest(makeq);
+
+  function writechoice(cho1,cho2,cho3,cho4,cho5) {
+    firebase.database().ref('quiz/choice/').set({
+      1: cho1
+      2: cho2
+      3: cho3
+      4: cho4
+      5: cho5
+    });
+  } 
+  writechoice(cho1,cho2,cho3,cho4,cho5);
+
+  
+  
+  function writeUserData(qanswer) {
+    firebase.database().ref('quiz/answer/').set({
+      1: qanswer
+    });
+  } 
+  writeUserData(qanswer);
+           
+  </script>
+  </body>
