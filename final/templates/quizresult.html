@@ -1,4 +1,6 @@
-<!-- 디테일 잡는걸로 바꿔야함 -->
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -9,13 +11,11 @@
   </head>
 
   <body>
-    <title>퀴즈 결과 확인</title>
-
-
-    <ul id = 'quizq'>
+    <title>퀴즈 결과</title>
+    <ul id = 'present'>
 
     </ul>
-    <ul id = 'answerq'></ul>
+    <ul id = 'peopledata'></ul>
     <!-- <ul id = 'namenodee'></ul> -->
     <script>
       const config = {
@@ -26,17 +26,18 @@
         projectId: "easyseminardb",
         storageBucket: "easyseminardb.appspot.com", 
       };  
+
       firebase.initializeApp(config);
-      label = 'question'
-      const dbref = firebase.database().ref('personal/pp/age').value;
+      label = 'quiz'
+      
       // document.write(dbref);
       // document.write('@@hi');
       const prelabel = document.getElementById(label);   
-      const ulList = document.getElementById('quizq');
+      const ulList = document.getElementById('present');
       var detailList = document.createElement('li');
-      var namenode = document.getElementById('answerq');
-      const dbReflabel = firebase.database().ref().child(label);
-      const dbRefage = dbReflabel.child('age');
+      var namenode = document.getElementById('namenodee');
+      const dbReflabel = firebase.database().ref().child(label).child('useranswer');
+     
       
             //Sync label changes
       dbReflabel.on('value',snap => {
@@ -50,29 +51,37 @@
       
          //Sync object changes
       dbReflabel.on('child_added', snap => {
+
         const li = document.createElement('li');
         const dut = document.createElement('p');
         li.innerText = snap.key;
-    
-        const dbref = firebase.database().ref(label+'/'+li.innerText);
+
         
+
+
+        const dbref = firebase.database().ref('quiz/useranswer/'+li.innerText);
         dbref.on('child_added', snap =>{
           const details = document.createElement('li');
-      	details.innerText = snap.val();
+        details.innerText = snap.val();
           details.id = snap.key;
           detailList.appendChild(details);
-          dut.innerText = dut.innerText + '\n 	' + '	-'+snap.key + ': ' + details.innerText;
+          dut.innerText = dut.innerText + '\n   ' + ' -'+snap.key + ': ' + details.innerText;
           // li.appendChild(details);
         });
-        dut.innerText =  'name: ' + li.innerText + dut.innerText + '\n\n';
-      	
+
+        dut.innerText =   dut.innerText + '\n';
+
         
         
+        
+
         // document.write(dbReflabel.child(snap.key).child('age').val());
         // testage.appendChild(details);
         ulList.appendChild(dut);
         
       }); 
+
+
      
     </script>
 
@@ -80,6 +89,7 @@
       <input type="submit" value="Home">
       <br><br>
     </form>
+
 
   </body>
 </html>
