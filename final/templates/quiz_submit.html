@@ -48,7 +48,7 @@
   var database = firebase.database();
 
   function writeUserData(nameq, quiz) {
-    firebase.database().ref('quiz/' + '1').set({
+    firebase.database().ref('quiz/' + 'useranswer' + '1').set({
       이름: nameq,
       정답: quiz
     });
