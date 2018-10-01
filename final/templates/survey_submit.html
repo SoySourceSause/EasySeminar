@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+        <style>
+      div{
+        background-color: #C8C7C7;
+        margin: 10px;
+        padding: 20px;
+        text-align: middle;
+      }
+
+      input[type=submit]{
+        position: relative;
+        padding: 12px 20px;
+        margin: 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        left: 10px;  
+      }
+    </style>
+  </head>
+  <div>
+    <h1>Successfully Submitted</h1>
+    <h4>설문지가 제출되었습니다</h4>
+    
+  </div>
+    <form action="/">
+    <input type="submit" class="button" value="Home">
+    
+    <div style="display:none;" id ="understand">{{understand}}</div>
+    <div style="display:none;" id ="helping">{{help}}</div>
+    <div style="display:none;" id ="hard">{{hard}}</div>
+    <div style="display:none;" id ="environment">{{environment}}</div>
+    <div style="display:none;" id ="satisfy">{{satisfy}}</div>
+    <div style="display:none;" id ="suggestion">{{suggestion}}</div>
+
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
+      authDomain: "easyseminardb.firebaseapp.com",
+      databaseURL: "https://easyseminardb.firebaseio.com",
+      projectId: "easyseminardb",
+      storageBucket: "easyseminardb.appspot.com",
+      messagingSenderId: "817545283146"
+    };
+
+    // firebase.initializeApp(config);
+     
+    // var PostKey = firebase.database().ref().child('posts').push().key;
+
+    
+    // var updates = {};
+
+    // updates['/personal/' + PostKey] = postData_understand;
+    // firebase.database().ref().update(updates);
+    var understand = document.getElementById("understand").innerHTML;
+    var help = document.getElementById("help").innerHTML;
+    var hard = document.getElementById("hard").innerHTML;
+    var environment = document.getElementById("environment").innerHTML;
+    var satisfy = document.getElementById("satisfy").innerHTML;
+    var suggestion = document.getElementById("suggestion").innerHTML;
+
+    firebase.initializeApp(config);
+    var database = firebase.database();
+    label = 'survey'
+
+    const ulist = document.getElementById('understand'); 
+    const dbReflabel = firebase.database().ref().child(label).child('understand');
+    document.write(dbReflabel)
+
+  //   firebase.database().ref('survey/' + environment).set({
+  //     answer: number
+//number call
+
+    var understand_number = understand_number+1;
+    var help_number = help_number+1;
+    var hard_number = hard_number+1;
+    var environment_number = environment_number+1;
+    var satisfy_number = satisfy_number+1;
+
+  //   });
+  // } 
+  // writeUserData(environment_number);
+  function writeUserData(content, number) {
+    firebase.database().ref('survey/' + content).set({
+      number: number
+    });
+  } 
+var userId = firebase.auth().currentUser.uid;
+return firebase.database().ref('/survey/' + userId).once('value').then(function(snapshot) {
+  var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+  // ...
+});
+  writeUserData(understand, understand_number);
+  writeUserData(help, help_number);
+  writeUserData(hard, hard_number);
+  writeUserData(environment, environment_number);
+  writeUserData(satisfy, satisfy_number);
+
+  // function writeUserData(name, school, department, age, contact, email) {
+  //   firebase.database().ref('personal/' + name).set({
+  //     school: school,
+  //     department: department,
+  //     age : age,
+  //     contact: contact,
+  //     email: email
+  //   });
+  // } 
+  // writeUserData(name,school, department, age, contact, email);
+// var userId = firebase.auth().currentUser.uid;
+// return firebase.database().ref('/survey/' + userId).once('value').then(function(snapshot) {
+//   var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+//   // ...
+// });
+
+
+// var ref = firebase.database().ref();
+// ref.child('survey').child('environment').child('1')
+// print(ref.get())
+
+
+  // var PostKey = firebase.database().ref().child('posts').push().key;
+  </script>
+  </body>

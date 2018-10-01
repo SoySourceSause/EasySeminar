@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
 
-    <style>
+     <style>
       div{
         background-color: #C8C7C7;
         margin: 10px;
@@ -21,19 +21,19 @@
         box-sizing: border-box;
         left: 10px;  
       }
-    </style>
+      </style>
   </head>
   <body>
+    <div>
+      <h1>Successfully Submitted</h1>
+      <h4>질문이 제출되었습니다</h4>
+    </div>
 
-  <div>
-    <h1>Successfully Submitted</h1>
-    <h4>퀴즈가 제출되었습니다</h4>
-  </div>
-   <form action="/">
+    <form action="/">
     <input type="submit" class="button" value="Home">
-    
+
     <div style="display:none;" id ="nameq">{{nameq}}</div>
-    <div style="display:none;" id ="quiz">{{quiz}}</div>
+    <div style="display:none;" id ="content">{{content}}</div>
 
   <script>
   // Initialize Firebase
@@ -45,19 +45,19 @@
       storageBucket: "easyseminardb.appspot.com",
       messagingSenderId: "817545283146"
     };
+
+
     var nameq = document.getElementById("nameq").innerHTML;
-    var quiz = document.getElementById("quiz").innerHTML;
+    var content = document.getElementById("content").innerHTML;
+
     firebase.initializeApp(config);
   var database = firebase.database();
-  var PostKey = firebase.database().ref().child('posts').push().key;
-
-  function writeUserData(nameq, quiz) {
-    firebase.database().ref('quiz/' + 'useranswer/' + PostKey).set({
-      이름: nameq,
-      정답: quiz
+  function writeUserData(nameq, content) {
+    firebase.database().ref('question/' + nameq).set({
+      content: content
     });
   } 
-  writeUserData(nameq,quiz);
+  writeUserData(nameq,content);
            
   </script>
-</body>
+  </body>
