@@ -10,7 +10,6 @@
         padding: 20px;
         text-align: middle;
       }
-
       input[type=submit]{
         position: relative;
         padding: 12px 20px;
@@ -27,11 +26,8 @@
 
   <div>
     <h1>Successfully Submitted</h1>
-    <h4>퀴즈가 제출되었습니다</h4>
+    <h4>데이터 전송이 완료되었습니다</h4>
   </div>
-   <form action="/">
-    <input type="submit" class="button" value="Home">
-    
     <div style="display:none;" id ="nameq">{{nameq}}</div>
     <div style="display:none;" id ="quiz">{{quiz}}</div>
 
@@ -49,10 +45,8 @@
     var quiz = document.getElementById("quiz").innerHTML;
     firebase.initializeApp(config);
   var database = firebase.database();
-  var PostKey = firebase.database().ref().child('posts').push().key;
-
   function writeUserData(nameq, quiz) {
-    firebase.database().ref('quiz/' + 'useranswer/' + PostKey).set({
+    firebase.database().ref('quiz/' + 'useranswer/' + '1').set({
       이름: nameq,
       정답: quiz
     });
