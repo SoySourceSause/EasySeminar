@@ -1,0 +1,67 @@
+//이 파일은 추가 수정이 필요합니다.
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+  </head>
+
+  <body>
+    <title>상세정보</title>
+    <ul id = 'environment'>
+
+    </ul>
+    <div id = 'num'></div>
+    <!-- <ul id = 'namenodee'></ul> -->
+    <script>
+      const config = {
+        apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
+        authDomain: "easyseminardb.firebaseapp.com",
+        databaseURL: "https://easyseminardb.firebaseio.com",
+        projectId: "easyseminardb",
+        storageBucket: "easyseminardb.appspot.com", 
+      };  
+      firebase.initializeApp(config);
+      label = 'survey'
+            function writeUserData(content, number) {
+        firebase.database().ref('survey/' + content).set({
+          '1': number
+        });
+      } 
+      // reload:
+      const prelabel = document.getElementById(label);   
+      const uiui = document.getElementById('num'); 
+      const ulList = document.getElementById('environment');
+      var howmanyList = document.createElement('li');
+      // var namenode = document.getElementById('namenodee');
+
+      function gogo(element, score){
+
+        const dbenvironment = firebase.database().ref().child(label).child(element).child(score);
+        dbenvironment.on('value', snap => {
+          
+          uiui.innerText = (snap.val());//*.innerText*
+          
+        
+        });
+      }
+      
+      //초기화 시간
+      setTimeout(function() {
+        
+
+       
+      }, 5000);
+      
+      
+      
+      
+    </script>
+
+
+
+  </body>
+</html>
