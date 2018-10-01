@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+  </head>
+  <body>
+
+    <h1>퀴즈가 제출되었습니다.</h1>
+
+    <p>quiz complete</p><br>
+    <div style="display:none;" id ="nameq">{{nameq}}</div>
+    <div style="display:none;" id ="content">{{content}}</div>
+
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDQQqY-iNLB8rEUVjIVbalJOXj9RJYrFB8",
+      authDomain: "easyseminardb.firebaseapp.com",
+      databaseURL: "https://easyseminardb.firebaseio.com",
+      projectId: "easyseminardb",
+      storageBucket: "easyseminardb.appspot.com",
+      messagingSenderId: "817545283146"
+    };
+    var nameq = document.getElementById("nameq").innerHTML;
+    var content = document.getElementById("content").innerHTML;
+    firebase.initializeApp(config);
+  var database = firebase.database();
+  function writeUserData(nameq, content) {
+    firebase.database().ref('question/' + nameq).set({
+      content: content
+    });
+  } 
+  writeUserData(nameq,content);
+           
+  </script>
+  </body>
