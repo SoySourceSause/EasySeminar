@@ -119,9 +119,9 @@ def quiz():
 
 @app.route('/quiz_submit', methods = ['POST'])
 def quiz_submit():
-	name = request.form['name']
+	nameq = request.form['nameq']
 	quiz = request.form['quiz']
-	return render_template('quiz_submit.html', name=name, quiz=quiz)
+	return render_template('quiz_submit.html', nameq=nameq, quiz=quiz)
   
 if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0')
