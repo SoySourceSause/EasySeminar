@@ -55,10 +55,10 @@
 
   function writechoice(cho1,cho2,cho3,cho4,cho5) {
     firebase.database().ref('quiz/choice/').set({
-      1: cho1
-      2: cho2
-      3: cho3
-      4: cho4
+      1: cho1,
+      2: cho2,
+      3: cho3,
+      4: cho4,
       5: cho5
     });
   } 
