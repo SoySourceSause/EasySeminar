@@ -18,9 +18,37 @@
   <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-functions.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-storage.js"></script>
     <!-- <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script> -->
+   
+    <style>
+      div{
+      position: absolute;
+      top: 250px;
+      
 
-  
-  <button type="button" id="downloadButton">자료</button>
+      width: 250px;
+      height: 250px;
+      background-color: #E9AFA3;
+      text-color: #ffffff;
+      text-align: center;
+
+      }
+      button{
+        margin-top: 210px;
+        background-color: #df514c;
+        border: 0;
+        padding: 12px 20px;
+
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+      }
+   </style>
+
+</head>
+  <div>
+  <button type="button" id="downloadButton">Download</button>
+  </div>
   <script>
     // Initialize Firebase
     var config = {
