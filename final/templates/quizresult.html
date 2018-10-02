@@ -21,7 +21,6 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-
   }
   h1{
     color: #3A405A;
@@ -54,7 +53,7 @@
         storageBucket: "easyseminardb.appspot.com", 
       };  
       firebase.initializeApp(config);
-      label = 'question'
+      label = 'quiz'
       const dbref = firebase.database().ref('personal/pp/age').value;
       // document.write(dbref);
       // document.write('@@hi');
@@ -62,8 +61,8 @@
       const ulList = document.getElementById('quizq');
       var detailList = document.createElement('li');
       var namenode = document.getElementById('answerq');
-      const dbReflabel = firebase.database().ref().child(label);
-      const dbRefage = dbReflabel.child('age');
+      const dbReflabel = firebase.database().ref().child(label).child('useranswer');
+      
       
             //Sync label changes
       dbReflabel.on('value',snap => {
@@ -81,7 +80,7 @@
         const dut = document.createElement('p');
         li.innerText = snap.key;
     
-        const dbref = firebase.database().ref(label+'/'+li.innerText);
+        const dbref = firebase.database().ref('quiz/useranswer/'+li.innerText);
         
         dbref.on('child_added', snap =>{
           const details = document.createElement('li');
@@ -91,7 +90,7 @@
           dut.innerText = dut.innerText + '\n 	' + '	-'+snap.key + ': ' + details.innerText;
           // li.appendChild(details);
         });
-        dut.innerText =  'name: ' + li.innerText + dut.innerText + '\n\n';
+        dut.innerText =  dut.innerText + '\n';
       	
         
         
