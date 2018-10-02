@@ -2,20 +2,40 @@
   <head>
     <meta charset="UTF-8">
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+  <style>
+          div{
+        background-color: #C8C7C7;
+        margin: 10px;
+        padding: 20px;
+        text-align: middle;
+      }
+
+      input[type=submit]{
+        position: relative;
+        padding: 12px 20px;
+        margin: 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        left: 10px;  
+      }
+
+  </style>
   </head>
   <body>
+  <div>
+    <h1>Successfully Submitted</h1>
+    <h4>퀴즈 문제가 제출되었습니다</h4>
+  </div>
+    <div  style="display:none;"id ="makeq">{{makeq}}</div>
+    <div  style="display:none;"id ="cho1">{{cho1}}</div>
+    <div  style="display:none;"id ="cho2">{{cho2}}</div>
+    <div  style="display:none;"id ="cho3">{{cho3}}</div>
+    <div  style="display:none;"id ="cho4">{{cho4}}</div>
+    <div  style="display:none;"id ="cho5">{{cho5}}</div>
 
-    <h1>퀴즈 문제가 제출되었습니다</h1>
-
-    <p>submit complete</p><br>
-    <div  id ="makeq">{{makeq}}</div>
-    <div  id ="cho1">{{cho1}}</div>
-    <div  id ="cho2">{{cho2}}</div>
-    <div  id ="cho3">{{cho3}}</div>
-    <div  id ="cho4">{{cho4}}</div>
-    <div  id ="cho5">{{cho5}}</div>
-
-    <div  id ="qanswer">{{qanswer}}</div>
+    <div  style="display:none;" id ="qanswer">{{qanswer}}</div>
 
 <!--     <div style="display:none;" id ="makeq">{{makeq}}</div>
     <div style="display:none;" id ="cho1">{{cho1}}</div>
@@ -24,6 +44,10 @@
     <div style="display:none;" id ="cho4">{{cho4}}</div>
     <div style="display:none;" id ="cho5">{{cho5}}</div>
     <div style="display:none;" id ="qanswer">{{qanswer}}</div> -->
+       <form action="/master">
+    <input type="submit" class="button" value="Home">
+    
+  </form>
   <script>
   // Initialize Firebase
     var config = {

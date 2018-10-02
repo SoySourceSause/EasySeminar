@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <h1>Quiz Menu</h1>
+
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+                div {
+  border-radius: 3px;
+    background-color: #E9AFA3;
+    padding: 50px;
+  height: 80%;
+    width: 100%;
+  }
+      input[type=submit]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  h1{
+    color: #3A405A;
+  }
+
+    </style>
   </head>
 
   <body>
 
+  <div>
+      <h1>Quiz Menu</h1>
     <form action="/makequiz">
-      <input type="submit" value="문제 출제하기">
+      <input type="submit" value="Make Quiz">
       <br><br>
     </form>
 
     <form action="/quizresult">
-      <input type="submit" value="퀴즈 결과 확인하기">
+      <input type="submit" value="Check Quiz Result">
       <br><br>
 </form>
+  </div>
+
+  </body>

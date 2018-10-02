@@ -4,30 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title></title>
+     <style>
+      div {
+  border-radius: 3px;
+    background-color: #E9AFA3;
+    padding: 50px;
+  height: 80%;
+    width: 100%;
+  }
+        input[type=submit]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+   
+  }
+  h1{
+    color: #3A405A;
+  }
+    ul{
+    list-style: none;
+  }
+  input[type=text]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+    textarea{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+    </style>
 </head>
 <body>
-
+<div>
   <form action="/makequiz_submit" method="POST">
-  <h1>quiz</h1>
+  <h1>Quiz Form</h1>
   <ul>
-    <li>문제지</li>
-      <textarea type="text" id ="makeq" name="makeq" rows="10" cols = "50"></textarea><br><br>
-    <li>선택지1</li>
-      <textarea type="text" id ="cho1" name="cho1" rows="6" cols = "50"></textarea><br>
-    <li>선택지2</li>
-      <textarea type="text" id ="cho2" name="cho2" rows="6" cols = "50"></textarea><br>
-    <li>선택지3</li>
-      <textarea type="text" id ="cho3" name="cho3" rows="6" cols = "50"></textarea><br>
-    <li>선택지4</li>
-      <textarea type="text" id ="cho4" name="cho4" rows="6" cols = "50"></textarea><br> 
-    <li>선택지5</li>
-      <textarea type="text" id ="cho5" name="cho5" rows="6" cols = "50"></textarea><br><br>               
-    <li>정답</li>
-      <textarea id ="qanswer" name="qanswer" rows="5" cols = "5"></textarea><br><br>
+    <li>Question</li>
+      <textarea type="text" id ="makeq" name="makeq" rows="4" cols = "50" ></textarea><br><br>
+    <li>Choice 1</li>
+      <input type="text"   id = "cho1" name="cho1" size="20" ><br>
+    <li>Choice 2</li>
+      <input type="text"   id = "cho2" name="cho2" size="20"  ><br>
+    <li>Chioce 3</li>
+      <input type="text"   id = "cho3" name="cho3" size="20"  ><br>
+    <li>Choice 4</li>
+      <input type="text"   id = "cho4" name="cho4" size="20"  ><br> 
+    <li>Choice 5</li>
+      <input type="text"   id = "cho5" name="cho5" size="20"  ><br><br>               
+    <li>Answer</li>
+    <input type="text"   id = "qanswer" name="qanswer" size="20"  ><br><br>
 
     <input type="submit" value="Submit">
   </ul>
   </form>
+</div>
 
 </body>
 </html>
