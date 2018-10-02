@@ -6,10 +6,32 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <style>
+      div {
+  border-radius: 3px;
+    background-color: #E9AFA3;
+    padding: 50px;
+  height: 80%;
+    width: 100%;
+  }
+        input[type=submit]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+  }
+  h1{
+    color: #3A405A;
+  }
+    </style>
   </head>
 
   <body>
-    <title>퀴즈 결과 확인</title>
+  <div>
+    <h1>Check Quiz Result</h1>
 
 
     <ul id = 'quizq'>
@@ -17,6 +39,11 @@
     </ul>
     <ul id = 'answerq'></ul>
     <!-- <ul id = 'namenodee'></ul> -->
+    </div>
+        <form action="/master">
+      <input type="submit" value="Home">
+      <br><br>
+    </form>
     <script>
       const config = {
       
@@ -76,10 +103,6 @@
      
     </script>
 
-    <form action="/">
-      <input type="submit" value="Home">
-      <br><br>
-    </form>
 
   </body>
 </html>
